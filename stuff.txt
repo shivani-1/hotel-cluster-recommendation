@@ -1,0 +1,27 @@
+Generate new date features based on date_time, srch_ci, and srch_co.
+Remove non-numeric columns like date_time.
+Add in features from dest_small.
+Replace any missing values with -1.
+
+
+aggregating hotel_cluster based on orig_destination_distance, or srch_destination_id.
+Aggregating on srch_destination_id will find the most popular hotel clusters for each destination. We’ll then be able to predict that a user who searches for a destination is going to one of the most popular hotel clusters for that destination. Think of this as a more granular version of the most common clusters technique we used earlier.
+
+We’ll weight bookings higher than clicks.
+Group t1 by srch_destination_id, and hotel_cluster.
+Iterate through each group, and:
+	Assign 1 point to each hotel cluster where is_booking is True.
+	Assign .15 points to each hotel cluster where is_booking is False.
+	Assign the score to the srch_destination_id / hotel_cluster combination in a dictionary.
+
+
+Sampling down the data even more.
+Parallelizing operations across multiple cores.
+Using Spark or other tools where tasks can be run on parallel workers.
+Exploring various ways to write code and benchmarking to find the most efficient approach.
+
+Finding similarity between users, then adjusting hotel cluster scores based on similarity.
+Using similarity between destinations to group multiple destinations together.
+Applying machine learning within subsets of the data.
+Combining different prediction strategies in a less naive way.
+Exploring the link between hotel clusters and regions more.
