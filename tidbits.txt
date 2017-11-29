@@ -5,9 +5,9 @@ Replace any missing values with -1.
 
 
 aggregating hotel_cluster based on orig_destination_distance, or srch_destination_id.
-Aggregating on srch_destination_id will find the most popular hotel clusters for each destination. We’ll then be able to predict that a user who searches for a destination is going to one of the most popular hotel clusters for that destination. Think of this as a more granular version of the most common clusters technique we used earlier.
+Aggregating on srch_destination_id will find the most popular hotel clusters for each destination. Weâ€™ll then be able to predict that a user who searches for a destination is going to one of the most popular hotel clusters for that destination. Think of this as a more granular version of the most common clusters technique we used earlier.
 
-We’ll weight bookings higher than clicks.
+Weâ€™ll weight bookings higher than clicks.
 Group t1 by srch_destination_id, and hotel_cluster.
 Iterate through each group, and:
 	Assign 1 point to each hotel cluster where is_booking is True.
